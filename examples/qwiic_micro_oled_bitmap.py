@@ -68,7 +68,7 @@ def runExample():
 
 
   print("\nSparkFun Micro OLED Bitmap Example\n")
-  myOLED = qwiic_micro_oled.QwiicMicroOLED()
+  myOLED = qwiic_micro_oled.QwiicMicroOled()
 
   if myOLED.isConnected() == False:
     print("The Qwiic Micro OLED device isn't connected to the system. Please check your connection", \

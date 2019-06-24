@@ -28,4 +28,4 @@
 #-----------------------------------------------------------------------------
 
 
-from .qwiic_micro_oled 		import QwiicMicroOLED
+from .qwiic_micro_oled 		import QwiicMicroOled
