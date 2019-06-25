@@ -156,17 +156,21 @@ class QwiicMicroOled(object):
 	ALL					= 1
 
 
-	def __init__(self, address=None):
+	def __init__(self, address=None, i2c_driver=None):
 
 
+		# Did the user specify an I2C address?
 		self.address = address if address != None else self.available_addresses[0]
 		
-		# load the I2C driver
+		# load the I2C driver if one isn't provided
 
-		self._i2c = qwiic_i2c.getI2CDriver()
-		if self._i2c == None:
-			print("Unable to load I2C driver for this platform.")
-			return
+		if i2c_driver == None:
+			self._i2c = qwiic_i2c.getI2CDriver()
+			if self._i2c == None:
+				print("Unable to load I2C driver for this platform.")
+				return
+		else:
+			self._i2c = i2c_driver
 
 		# define the screen buffer - since this is a two color display, only bits are used
 		# So the height is 8  bits / byte or LCDHEIGHT/8
@@ -563,7 +567,7 @@ class QwiicMicroOled(object):
 
 	def getFontStartChar(self):
 		return self._font.start_char
-	
+
 	# Return the total characters of the current font.
 
 	def getFontTotalChar(self):
