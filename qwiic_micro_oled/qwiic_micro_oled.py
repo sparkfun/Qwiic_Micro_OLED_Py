@@ -5,9 +5,6 @@
 #
 # Written by  SparkFun Electronics, May 2019
 # 
-# This python library supports the SparkFun Electroncis qwiic 
-# qwiic sensor/board ecosystem on a Raspberry Pi (and compatable) single
-# board computers. 
 #
 # More information on qwiic is at https:= www.sparkfun.com/qwiic
 #
@@ -31,10 +28,6 @@ import math
 
 # Define the device name and I2C addresses. These are set in the class defintion 
 # as class variables, making them avilable without having to create a class instance.
-#
-# The base class and associated support functions use these class varables to 
-# allow users to easily identify connected devices as well as provide basic 
-# device services.
 #
 # The name of this device - note this is private 
 _DEFAULT_NAME = "Qwiic Micro OLED"
@@ -200,9 +193,11 @@ class QwiicMicroOled(object):
 		self.nFonts = mfonts.count()
 
 
+	#--------------------------------------------------------------------------
 	def isConnected(self):
 		return qwiic_i2c.isDeviceConnected(self.address)
 
+	#--------------------------------------------------------------------------
 	def begin(self):
 
 		self.setFontType(0)
@@ -276,6 +271,7 @@ class QwiicMicroOled(object):
 		else:
 			self._screenbuffer[:] = [value]*len(self._screenbuffer)
 
+	#--------------------------------------------------------------------------
     # The WHITE color of the display will turn to BLACK and the BLACK will turn to WHITE.
 
 	def invert(self, inv):
@@ -284,12 +280,14 @@ class QwiicMicroOled(object):
 		else:
 			self._i2c.writeByte(self.address, I2C_COMMAND, NORMALDISPLAY)
 
+	#--------------------------------------------------------------------------
 	# OLED contract value from 0 to 255. Note: Contrast level is not very obvious.
 
 	def contrast(self, contrast): 
 		self._i2c.writeByte(self.address, I2C_COMMAND, SETCONTRAST)		#  0x81
 		self._i2c.writeByte(self.address, I2C_COMMAND, contrast)
 
+	#--------------------------------------------------------------------------
     # Bulk move the screen buffer to the SSD1306 controller's memory so that images/graphics drawn on the screen buffer will be displayed on the OLED.
 
 	def display(self):
@@ -318,7 +316,7 @@ class QwiicMicroOled(object):
 				self._i2c.writeBlock(self.address, I2C_DATA, self._screenbuffer[lineStart+iStart:lineStart+iEnd])				
 	
 	#     Leftover from port -> Arduino's print overridden so that we can use uView.print().
-
+	#--------------------------------------------------------------------------
 	def write(self, c):
 
 		if c == '\n':
@@ -334,6 +332,7 @@ class QwiicMicroOled(object):
 	
 		return 1
 
+	#--------------------------------------------------------------------------
 	def print(self, text):
 
 		# a list or array? If not, make it one
@@ -347,13 +346,14 @@ class QwiicMicroOled(object):
 			self.write(text[i])
 
 
-
+	#--------------------------------------------------------------------------
 	# MicroOLED's cursor position to x,y.
 
 	def setCursor(self,  x,  y):
 		self.cursorX = x
 		self.cursorY = y
 
+	#--------------------------------------------------------------------------
 	# Draw color pixel in the screen buffer's x,y position with NORM or XOR draw mode.
 
 	def pixel(self, x, y, color=None,  mode=None):
@@ -381,6 +381,7 @@ class QwiicMicroOled(object):
 			else:
 				self._screenbuffer[index] &= (~(1 << (y%8)) & 0xff)
 
+	#--------------------------------------------------------------------------
 	#  Draw line using color and mode from x0,y0 to x1,y1 of the screen buffer.
 
 	def line(self, x0, y0, x1, y1, color=None, mode=None):
@@ -423,6 +424,7 @@ class QwiicMicroOled(object):
 				err += dx
 			x0 += 1
 	
+	#--------------------------------------------------------------------------	
 	# Draw horizontal line using color and mode from x,y to x+width,y of the screen buffer.
 
 	def lineH(self, x, y, width, color=None, mode=None):
@@ -435,7 +437,7 @@ class QwiicMicroOled(object):
 
 		self.line( x, y, x+width, y, color, mode)
 
-
+	#--------------------------------------------------------------------------
 	# Draw vertical line using color and mode from x,y to x,y+height of the screen buffer.
 
 	def lineV(self, x, y, height, color=None, mode=None):
@@ -448,6 +450,7 @@ class QwiicMicroOled(object):
 
 		self.line(x, y, x, y+height, color, mode)
 
+	#--------------------------------------------------------------------------
 	# Draw rectangle using color and mode from x,y to x+width,y+height of the screen buffer.
 	
 	def rect(self, x,  y, width, height, color=None, mode=None):
@@ -471,6 +474,7 @@ class QwiicMicroOled(object):
 		self.lineV(x, y+1, tempHeight, color, mode)
 		self.lineV(x+width-1, y+1, tempHeight, color, mode)
 
+	#--------------------------------------------------------------------------
 	#  Draw filled rectangle using color and mode from x,y to x+width,y+height of the screen buffer.
 	
 	def rectFill(self, x, y, width, height, color=None,  mode=None):
@@ -485,6 +489,7 @@ class QwiicMicroOled(object):
 		for i in range(x, x+width):
 			self.lineV(i, y, height, color, mode)
 
+	#--------------------------------------------------------------------------
 	# Draw circle with radius using color and mode at x,y of the screen buffer.
 	
 	def circle(self, x0, y0, radius, color=None, mode=None):
@@ -532,21 +537,28 @@ class QwiicMicroOled(object):
 	def getLCDHeight(self):
 		return LCDHEIGHT
 	
+	height = property(getLCDHeight)
+
 	# The width of the LCD return as byte.
 
 	def getLCDWidth(self):
 		return LCDWIDTH
+
+	width = property(getLCDWidth)
 
 	# The cucrrent font's width return as byte.
 	
 	def getFontWidth(self):
 		return self._font.width
 	
+	font_width = property(getFontWidth)
+
 	# The current font's height return as byte.
 	
 	def getFontHeight(self):
 		return self._font.height
 	
+	font_height = property(getFontHeight)
 	# Return the starting ASCII character of the currnet font, not all fonts start with ASCII character 0. Custom fonts can start from any ASCII character.
 
 	def getFontStartChar(self):
