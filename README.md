@@ -1,4 +1,7 @@
 # Qwiic_Micro_OLED_Py
+<p align="center">
+   <img src="https://cdn.sparkfun.com/assets/custom_pages/2/7/2/qwiic-logo-registered.jpg"  width=200>
+</p>
 Python package for the qwiic [Micro OLED board](https://www.sparkfun.com/products/14532)
 
 ![SparkFun Qwiic Micro OLED Breakout](https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg)
@@ -79,3 +82,7 @@ def runExample():
 
 runExample()
 ```
+
+<p align="center">
+<img src="https://cdn.sparkfun.com/assets/custom_pages/3/3/4/dark-logo-red-flame.png" alt="SparkFun - Start Something">
+</p>
