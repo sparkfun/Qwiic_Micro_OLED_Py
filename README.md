@@ -4,7 +4,9 @@
 </p>
 Python package for the qwiic [Micro OLED board](https://www.sparkfun.com/products/14532)
 
-![SparkFun Qwiic Micro OLED Breakout](https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg)
+<p align="center">
+   <img src="https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg"  width=400 alt="SparkFun Qwiic Micro OLED Breakout">
+</p>
 
 This package is a port of the [SparkFun Micro OLED Breakout Arduino Library](https://github.com/sparkfun/SparkFun_Micro_OLED_Arduino_Library)
 
