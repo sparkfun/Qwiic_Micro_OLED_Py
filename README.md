@@ -3,6 +3,8 @@ Python package for the qwiic [Micro OLED board](https://www.sparkfun.com/product
 
 ![SparkFun Qwiic Micro OLED Breakout](https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg)
 
+This package is a port of the [SparkFun Micro OLED Breakout Arduino Library](https://github.com/sparkfun/SparkFun_Micro_OLED_Arduino_Library)
+
 ## Dependencies 
 This driver package depends on the qwii I2C driver: 
 [Qwiic_I2C_Py](https://github.com/sparkfun/Qwiic_I2C_Py)
