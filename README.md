@@ -8,7 +8,7 @@ Qwiic_Micro_OLED_Py
 <p align="center">
 	<a href="https://test.pypi.org/project/sparkfun_qwiic_micro_oled/" alt="Package">
 		<img src="https://img.shields.io/pypi/pyversions/sparkfun_qwiic_micro_oled.svg" /></a>
-	<a href="https://github.com/sparkfun/Qwiic_Proximity_Py/issues" alt="Issues">
+	<a href="https://github.com/sparkfun/Qwiic_Micro_OLED_Py/issues" alt="Issues">
 		<img src="https://img.shields.io/github/issues/sparkfun/Qwiic_Micro_OLED_Py/issues.svg" /></a>
 	<a href="https://github.com/sparkfun/Qwiic_Micro_OLED_Py/blob/master/LICENSE" alt="License">
 		<img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
@@ -18,7 +18,7 @@ Qwiic_Micro_OLED_Py
 	
 </p>
 
-<img src="https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg"  align="right" width=340 alt="SparkFun Qwiic Micro OLED Breakout">
+<img src="https://cdn.sparkfun.com//assets/parts/1/2/6/2/1/14532-SparkFun_Micro_OLED_Breakout__Qwiic_-01.jpg"  align="right" width=300 alt="SparkFun Qwiic Micro OLED Breakout">
 
 Python package for the qwiic [Micro OLED board](https://www.sparkfun.com/products/14532)
 
