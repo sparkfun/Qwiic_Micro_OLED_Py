@@ -6,7 +6,7 @@ Qwiic_Micro_OLED_Py
    <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"  width=240>   
 </p>
 <p align="center">
-	<a href="https://test.pypi.org/project/sparkfun_qwiic_micro_oled/" alt="Package">
+	<a href="https://pypi.org/project/sparkfun-qwiic-micro-oled/" alt="Package">
 		<img src="https://img.shields.io/pypi/pyversions/sparkfun_qwiic_micro_oled.svg" /></a>
 	<a href="https://github.com/sparkfun/Qwiic_Micro_OLED_Py/issues" alt="Issues">
 		<img src="https://img.shields.io/github/issues/sparkfun/Qwiic_Micro_OLED_Py.svg" /></a>
@@ -28,20 +28,31 @@ This package can be used in conjunction with the overall [SparkFun qwiic Python 
 
 New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.sparkfun.com/qwiic).
 
+## Contents
+
+* [Dependencies](#dependencies)
+* [Installation](#installation)
+* [Documentation](#documentation)
+* [Example Use](#example-use)
+
 Dependencies
 ================
 This driver package depends on the qwiic I2C driver: 
 [Qwiic_I2C_Py](https://github.com/sparkfun/Qwiic_I2C_Py)
 
+Documentation
+-------------
+The Sparkfun qwiic BME280 module documentation is hosted at [ReadTheDocs](https://qwiic-micro-oled-py.readthedocs.io/en/latest/index.html)
+
 Installation
 --------------
 
 ### PyPi Installation
-On systems that support PyPi installation via pip, this library is installed using the following commands
+This repository is hosted on PyPi as the [sparkfun-qwiic-bme280](https://pypi.org/project/sparkfun-qwiic-micro-oled/) package. On systems that support PyPi installation via pip, this library is installed using the following commands
 
 For all users (note: the user must have sudo privileges):
 ```sh
-sudo pip install sparkfun_qwiic_micro_oled
+sudo pip install sparkfun-qwiic-micro-oled
 ```
 For the current user:
 
