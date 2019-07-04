@@ -36,6 +36,19 @@
 # this package encapsulates the resources used for the Micro OLED board
 #
 #-----------------------------------------------------------------------------
+"""
+qwiic_micro_oled
+=================
+Python module for the [Qwiic Micro OLED Display](https://www.sparkfun.com/products/14532)
+
+This python package is a port of the existing [SparkFun Micro OLED Arduino Library](https://github.com/sparkfun/SparkFun_Micro_OLED_Arduino_Library)
+
+This package can be used in conjunction with the overall [SparkFun qwiic Python Package](https://github.com/sparkfun/Qwiic_Py)
+
+New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.sparkfun.com/qwiic).
+
+"""
+
 
 
 from .qwiic_micro_oled 		import QwiicMicroOled
