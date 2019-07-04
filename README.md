@@ -42,13 +42,13 @@ This driver package depends on the qwiic I2C driver:
 
 Documentation
 -------------
-The Sparkfun qwiic BME280 module documentation is hosted at [ReadTheDocs](https://qwiic-micro-oled-py.readthedocs.io/en/latest/index.html)
+The Sparkfun qwiic Micro OLED module documentation is hosted at [ReadTheDocs](https://qwiic-micro-oled-py.readthedocs.io/en/latest/index.html)
 
 Installation
 --------------
 
 ### PyPi Installation
-This repository is hosted on PyPi as the [sparkfun-qwiic-bme280](https://pypi.org/project/sparkfun-qwiic-micro-oled/) package. On systems that support PyPi installation via pip, this library is installed using the following commands
+This repository is hosted on PyPi as the [sparkfun-qwiic-micro-oled](https://pypi.org/project/sparkfun-qwiic-micro-oled/) package. On systems that support PyPi installation via pip, this library is installed using the following commands
 
 For all users (note: the user must have sudo privileges):
 ```sh
