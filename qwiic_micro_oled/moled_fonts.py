@@ -18,13 +18,6 @@
 #==================================================================================
 # Copyright (c) 2019 SparkFun Electronics
 #
-<<<<<<< HEAD
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http:= www.gnu.org/licenses/>.
-#-----------------------------------------------------------------------------
-
-from __future__ import division
-=======
 # Permission is hereby granted, free of charge, to any person obtaining a copy 
 # of this software and associated documentation files (the "Software"), to deal 
 # in the Software without restriction, including without limitation the rights 
@@ -44,7 +37,7 @@ from __future__ import division
 # SOFTWARE.
 #==================================================================================
 	
->>>>>>> 3e1c1ee6286234cb0cbf4e8f90b7b6c03a051e6e
+from __future__ import division
 import sys
 import os
 
