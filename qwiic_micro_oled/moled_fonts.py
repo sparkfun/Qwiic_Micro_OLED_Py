@@ -18,6 +18,13 @@
 #==================================================================================
 # Copyright (c) 2019 SparkFun Electronics
 #
+<<<<<<< HEAD
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http:= www.gnu.org/licenses/>.
+#-----------------------------------------------------------------------------
+
+from __future__ import division
+=======
 # Permission is hereby granted, free of charge, to any person obtaining a copy 
 # of this software and associated documentation files (the "Software"), to deal 
 # in the Software without restriction, including without limitation the rights 
@@ -37,6 +44,7 @@
 # SOFTWARE.
 #==================================================================================
 	
+>>>>>>> 3e1c1ee6286234cb0cbf4e8f90b7b6c03a051e6e
 import sys
 import os
 
@@ -87,6 +95,7 @@ class MicroOLEDFont():
 
 		# read the font header
 		fHeader = fp.read(6)
+		fHeader = bytearray(fHeader) ## for int conversion
 		self.width 		= fHeader[0]
 		self.height 	= fHeader[1]
 		self.start_char = fHeader[2]
@@ -102,16 +111,21 @@ class MicroOLEDFont():
 		# Double note: If the font is a single row - we add a byte to the row buffer
 		#			   Seems no margin was encoded on this font, and this bust be added
 
-		rowsPerChar = math.ceil(self.height/8)
+		rowsPerChar = int(math.ceil(self.height/8.))
 
 		# do we add a pad byte?
 		nPad = (rowsPerChar == 1)*1
+
+		# buffer padding bytes
+		bBuffer = bytearray(nPad)
 
 		# read in font
 		for iChar in range(self.total_char * rowsPerChar):
 
 			try:
-				self._fontData[iChar] = fp.read(self.width) + bytes( [0]*nPad )
+
+				self._fontData[iChar] = bytearray(fp.read(self.width))  + bBuffer
+
 			except Exception as exError:
 				print("Error reading font data. Character: %d, File:%s" % (iChar, _loadFontFile))
 
