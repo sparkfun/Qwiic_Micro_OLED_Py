@@ -44,7 +44,7 @@ This driver package depends on the qwiic I2C driver:
 
 Documentation
 -------------
-The Sparkfun qwiic Micro OLED module documentation is hosted at [ReadTheDocs](https://qwiic-micro-oled-py.readthedocs.io/en/latest/index.html)
+The SparkFun qwiic Micro OLED module documentation is hosted at [ReadTheDocs](https://qwiic-micro-oled-py.readthedocs.io/en/latest/index.html)
 
 Installation
 --------------
