@@ -6,10 +6,10 @@
 #------------------------------------------------------------------------
 #
 # Written by  SparkFun Electronics, May 2019
-# 
-# This python library supports the SparkFun Electroncis qwiic 
+#
+# This python library supports the SparkFun Electroncis qwiic
 # qwiic sensor/board ecosystem on a Raspberry Pi (and compatable) single
-# board computers. 
+# board computers.
 #
 # More information on qwiic is at https:# www.sparkfun.com/qwiic
 #
@@ -18,22 +18,22 @@
 #==================================================================================
 # Copyright (c) 2019 SparkFun Electronics
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy 
-# of this software and associated documentation files (the "Software"), to deal 
-# in the Software without restriction, including without limitation the rights 
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-# copies of the Software, and to permit persons to whom the Software is 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all 
+# The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #==================================================================================
 # Example - simple command to setup the OLED.
@@ -50,7 +50,7 @@ def runExample():
 
     #  These three lines of code are all you need to initialize the
     #  OLED and print the splash screen.
-  
+
     #  Before you can start using the OLED, call begin() to init
     #  all of the pins and configure the OLED.
 
@@ -58,7 +58,7 @@ def runExample():
     print("\nSparkFun Micro OLED Hello Example\n")
     myOLED = qwiic_micro_oled.QwiicMicroOled()
 
-    if myOLED.isConnected() == False:
+    if not myOLED.connected:
         print("The Qwiic Micro OLED device isn't connected to the system. Please check your connection", \
             file=sys.stderr)
         return
@@ -68,8 +68,8 @@ def runExample():
     #  clear(PAGE) will clear the Arduino's display buffer.
     myOLED.clear(myOLED.ALL)  #  Clear the display's memory (gets rid of artifacts)
     #  To actually draw anything on the display, you must call the
-    #  display() function. 
-    myOLED.display()   
+    #  display() function.
+    myOLED.display()
 
 if __name__ == '__main__':
     try:

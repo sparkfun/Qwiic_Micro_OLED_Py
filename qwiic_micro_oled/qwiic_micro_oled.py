@@ -764,8 +764,7 @@ class QwiicMicroOled(object):
 
     # The height of the LCD return as byte.
 
-    @classmethod
-    def get_lcd_height(cls):
+    def get_lcd_height(self):
         """
             The height of the display in pixels
 
@@ -778,8 +777,7 @@ class QwiicMicroOled(object):
     height = property(get_lcd_height)
 
     # The width of the LCD return as byte.
-    @classmethod
-    def get_lcd_width(cls):
+    def get_lcd_width(self):
         """
             The width of the display in pixels
 
