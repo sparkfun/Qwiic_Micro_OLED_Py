@@ -1008,6 +1008,36 @@ class QwiicMicroOled(object):
         self._i2c.writeByte(self.address, I2C_COMMAND, 0x00)
         self._i2c.writeByte(self.address, I2C_COMMAND, 0xFF)
         self._i2c.writeByte(self.address, I2C_COMMAND, ACTIVATESCROLL)
+        
+        
+    # Set row start to row stop on the OLED to scroll left.
+    # Refer to http://learn.microview.io/intro/general-overview-of-microview.html for explanation of the rows.
+
+    def scroll_left(self, start, stop):
+        """
+            Set row start to row stop on the OLED to scroll left.
+            Refer to http://learn.microview.io/intro/general-overview-of-microview.html for explanation of the rows.
+
+            :param start: The staring position on the display
+            :param stop: The stopping position on the display
+
+            :return: No return value
+
+        """
+
+        if stop < start:        # stop must be larger or equal to start
+            return
+
+        self.scroll_stop()       # need to disable scrolling before starting to avoid memory corrupt
+
+        self._i2c.writeByte(self.address, I2C_COMMAND, LEFT_HORIZONTALSCROLL)
+        self._i2c.writeByte(self.address, I2C_COMMAND, 0x00)
+        self._i2c.writeByte(self.address, I2C_COMMAND, start)
+        self._i2c.writeByte(self.address, I2C_COMMAND, 0x7)     # scroll speed frames , TODO
+        self._i2c.writeByte(self.address, I2C_COMMAND, stop)
+        self._i2c.writeByte(self.address, I2C_COMMAND, 0x00)
+        self._i2c.writeByte(self.address, I2C_COMMAND, 0xFF)
+        self._i2c.writeByte(self.address, I2C_COMMAND, ACTIVATESCROLL)
 
 
     # Flip the graphics on the OLED vertically.
