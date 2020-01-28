@@ -111,7 +111,7 @@ def runExample():
     print("\nSparkFun Micro OLED Hello Example\n")
     myOLED = qwiic_micro_oled.QwiicMicroOled()
 
-    if myOLED.isConnected() == False:
+    if myOLED.is_connected() == False:
         print("The Qwiic Micro OLED device isn't connected to the system. Please check your connection", \
             file=sys.stderr)
         return
