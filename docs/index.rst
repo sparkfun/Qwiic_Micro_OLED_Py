@@ -1,5 +1,5 @@
 .. sparkfun_qwiic documentation master file, created by
-   sphinx-quickstart on Tue Jul  2 11:01:40 2019.
+   sphinx-quickstart on Tue May  11 11:01:40 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

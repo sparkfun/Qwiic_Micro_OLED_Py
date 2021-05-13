@@ -18,11 +18,11 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'sparkfun_qwiic_micro_oled'
-copyright = '2019, SparkFun Electronics'
+copyright = '2021, SparkFun Electronics'
 author = 'SparkFun Electronics'
 
 # The full version, including alpha/beta/rc tags
-release = '0.9.0'
+release = '0.10.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -34,8 +34,8 @@ extensions = [
 	'sphinx.ext.autodoc',
 	'sphinx.ext.intersphinx',
 	'sphinx.ext.viewcode',
-	'm2r'
-	]
+	'sphinx_automodapi.automodapi',
+	'm2r2'
 
 source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.

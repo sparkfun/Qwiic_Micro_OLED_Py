@@ -2,7 +2,7 @@
 #
 # This is a python install script written for qwiic python package.
 #
-# Written by  SparkFun Electronics, May 2019
+# Written by  SparkFun Electronics, May 2021
 #
 # This python library supports the SparkFun Electroncis qwiic
 # ecosystem, providing an plaform indepenant interface to the
@@ -13,7 +13,7 @@
 # Do you like this library? Help support SparkFun. Buy a board!
 #
 #==================================================================================
-# Copyright (c) 2019 SparkFun Electronics
+# Copyright (c) 2021 SparkFun Electronics
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -52,7 +52,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.9.0',
+    version='0.10.0',
 
     description='SparkFun Electronics qwiic Micro OLED package',
     long_description=long_description,
@@ -64,7 +64,7 @@ setup(
     author='SparkFun Electronics',
     author_email='info@sparkfun.com',
 
-    install_requires=['sparkfun_qwiic_i2c'],
+    install_requires=['sparkfun_qwiic_i2c', "sparkfun_qwiic_oled_base"],
 
     # Choose your license
     license='MIT',
@@ -75,7 +75,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -98,10 +98,6 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=["qwiic_micro_oled", "qwiic_micro_oled/fonts"],
-
-    package_data={
-         "qwiic_micro_oled/fonts" : ['*.bin']
-    },
+    packages=["qwiic_micro_oled"],
 
 )

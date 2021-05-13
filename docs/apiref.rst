@@ -1,10 +1,5 @@
 API Reference
 ==============
 
-.. automodule:: qwiic_micro_oled
-   :members:
-
-
-.. autoclass:: QwiicMicroOled
-	:members:
-
+.. automodapi:: qwiic_micro_oled
+   :inherited-members:

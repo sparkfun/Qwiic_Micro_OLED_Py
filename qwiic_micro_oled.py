@@ -1,18 +1,17 @@
 #-----------------------------------------------------------------------------
-# __init__.py
+# qwiic_micro_oled.py
 #
 #------------------------------------------------------------------------
 #
+# Written by  SparkFun Electronics, May 2021
 #
-# Written by  SparkFun Electronics, May 2019
 #
-#
-# More information on qwiic is at https://www.sparkfun.com/qwiic
+# More information on qwiic is at https:= www.sparkfun.com/qwiic
 #
 # Do you like this library? Help support SparkFun. Buy a board!
 #
 #==================================================================================
-# Copyright (c) 2019 SparkFun Electronics
+# Copyright (c) 2021 SparkFun Electronics
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,21 +31,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #==================================================================================
-#-----------------------------------------------------------------------------
-# this package encapsulates the resources used for the Micro OLED board
-#
-#-----------------------------------------------------------------------------
-
 #
 # This is mostly a port of existing Arduino functionaly, so pylint is sad.
 # The goal is to keep the public interface pthonic, but internal is internal
 #
-# pylint: disable=line-too-long
-#
+# pylint: disable=line-too-long, bad-whitespace, invalid-name, too-many-lines
+# pylint: disable=too-many-lines, too-many-arguments, too-many-instance-attributes
+# pylint: disable=too-many-public-methods
 
 """
 qwiic_micro_oled
-=================
+====================
 Python module for the [Qwiic Micro OLED Display](https://www.sparkfun.com/products/14532)
 
 This python package is a port of the existing [SparkFun Micro OLED Arduino Library](https://github.com/sparkfun/SparkFun_Micro_OLED_Arduino_Library)
@@ -57,6 +52,47 @@ New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.s
 
 """
 
+from __future__ import print_function
+import math
+import qwiic_i2c
+
+from qwiic_oled_base import QwiicOledBase
+
+# Define the device name and I2C addresses. These are set in the class defintion
+# as class variables, making them avilable without having to create a class instance.
+#
+# The name of this device - note this is private
+_DEFAULT_NAME = "Qwiic Micro OLED (64x48)"
+
+# Some devices have multiple availabel addresses - this is a list of these addresses.
+# NOTE: The first address in this list is considered the default I2C address for the
+# device.
+
+_AVAILABLE_I2C_ADDRESS = [0x3D, 0x3C]
+_LCDWIDTH            = 64
+_LCDHEIGHT           = 48
 
 
-from .qwiic_micro_oled      import QwiicMicroOled
+class QwiicMicroOled(QwiicOledBase):
+    """
+    QwiicMicroOled
+
+        :param address: The I2C address to use for the device.
+                        If not provided, the default address is used.
+        :param i2c_driver: An existing i2c driver object. If not provided
+                        a driver object is created.
+        :return: The OLED Display device object.
+        :rtype: Object
+    """
+
+    # Constructor
+    device_name         =_DEFAULT_NAME
+    available_addresses = _AVAILABLE_I2C_ADDRESS
+
+    def __init__(self, address=None, i2c_driver=None):
+
+        # Did the user specify an I2C address?
+        self.address = address if address is not None else self.available_addresses[0]
+
+        # Instantiate OLED Display Driver - Base Class
+        super().__init__(address, _LCDWIDTH, _LCDHEIGHT, i2c_driver)
