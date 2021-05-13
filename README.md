@@ -108,7 +108,7 @@ def runExample():
     #  all of the pins and configure the OLED.
 
 
-    print("\nSparkFun Micro OLED Hello Example\n")
+    print("\nSparkFun Micro OLED - Hello Example\n")
     myOLED = qwiic_micro_oled.QwiicMicroOled()
 
     if myOLED.isConnected() == False:
@@ -116,12 +116,14 @@ def runExample():
             file=sys.stderr)
         return
 
+    #  Before you can start using the OLED, call begin() to init all of the pins and configure the OLED.
     myOLED.begin()
-    #  clear(ALL) will clear out the OLED's graphic memory.
-    #  clear(PAGE) will clear the Arduino's display buffer.
-    myOLED.clear(myOLED.ALL)  #  Clear the display's memory (gets rid of artifacts)
-    #  To actually draw anything on the display, you must call the
-    #  display() function. 
+
+    myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
+
+    myOLED.print("Hello World")  #  Add "Hello World" to buffer
+
+    #  To actually draw anything on the display, you must call the display() function. 
     myOLED.display()
 
 runExample()
