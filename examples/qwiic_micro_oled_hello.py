@@ -5,7 +5,7 @@
 # Simple Example for the Qwiic MicroOLED Device
 #------------------------------------------------------------------------
 #
-# Written by  SparkFun Electronics, May 2019
+# Written by  SparkFun Electronics, May 2021
 #
 # This python library supports the SparkFun Electroncis qwiic
 # qwiic sensor/board ecosystem on a Raspberry Pi (and compatable) single
@@ -16,7 +16,7 @@
 # Do you like this library? Help support SparkFun. Buy a board!
 #
 #==================================================================================
-# Copyright (c) 2019 SparkFun Electronics
+# Copyright (c) 2021 SparkFun Electronics
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -42,8 +42,7 @@
 from __future__ import print_function
 import qwiic_micro_oled
 import sys
-
-
+import time
 
 
 def runExample():
@@ -70,6 +69,17 @@ def runExample():
     #  To actually draw anything on the display, you must call the
     #  display() function.
     myOLED.display()
+
+    time.sleep(2)
+
+    myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
+
+    myOLED.print("Hello World")  #  Add "Hello World" to buffer
+
+    #  To actually draw anything on the display, you must call the display() function. 
+    myOLED.display()
+
+
 
 if __name__ == '__main__':
     try:
