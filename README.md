@@ -47,8 +47,9 @@ The qwiic Python package current supports the following platforms:
 
 Dependencies
 ================
-This driver package depends on the qwiic I2C driver: 
-[Qwiic_I2C_Py](https://github.com/sparkfun/Qwiic_I2C_Py)
+This driver package depends on the qwiic I2C driver: [Qwiic_I2C_Py](https://github.com/sparkfun/Qwiic_I2C_Py)
+
+This package depends on the OLED display driver base package: [Qwiic_OLED_Base_Py](https://github.com/sparkfun/Qwiic_OLED_Base_Py)
 
 Documentation
 -------------
